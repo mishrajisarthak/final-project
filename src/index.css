@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom base styles */
+:root {
+  --primary: 109, 40, 217;
+  --secondary: 13, 148, 136;
+  --accent: 236, 72, 153;
+}
+
+body {
+  @apply font-sans text-gray-800 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen;
+}
+
+/* Custom component classes */
+@layer components {
+  .btn {
+    @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-300;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-300;
+  }
+
+  .btn-accent {
+    @apply bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-300;
+  }
+
+  .input {
+    @apply w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg shadow-sm transition duration-300
+    focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-transparent;
+  }
+
+  .card {
+    @apply bg-white/80 backdrop-blur-sm shadow-glass rounded-2xl border border-white/20 p-6;
+  }
+
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-md shadow-md border-b border-white/20;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Animation keyframes */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
